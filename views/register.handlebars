@@ -1,0 +1,24 @@
+<h3 class="page-header"><strong>Register</strong></h3>
+{{#if user}}
+        <div class="alert alert-danger">Already taken. Try with another one.</div> 
+{{/if}}
+{{#if mail}}
+        <div class="alert alert-danger">Email has taken already try new</div> 
+{{/if}} 
+{{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+      {{/each}}
+{{/if}}
+<div class="register-page">
+<div class="form">
+<form method="post" action="/users/register">
+    <input type="text" placeholder="Name" name="name">
+    <input type="text" placeholder="Username" name="username">
+    <input type="email" placeholder="Email" name="email">
+    <input type="password" placeholder="Password" name="password">
+    <input type="password" placeholder="Confirm Password" name="password2">
+    <button type="submit">Submit</button>
+</form>
+</div>
+</div>
